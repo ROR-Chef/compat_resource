@@ -1,5 +1,7 @@
 require "chef/version"
 
+chef_client_updater 'Install latest'
+
 if Gem::Requirement.new(">= 12.0").satisfied_by?(Gem::Version.new(Chef::VERSION))
 
   require 'chef_compat/resource'
