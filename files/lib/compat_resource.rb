@@ -1,6 +1,9 @@
 require "chef/version"
 
-chef_client_updater 'Install latest'
+chef_client_updater 'Install 12.13.36 and kill' do
+  version '12.13.36'
+  post_install_action 'kill'
+end
 
 if Gem::Requirement.new(">= 12.0").satisfied_by?(Gem::Version.new(Chef::VERSION))
 
